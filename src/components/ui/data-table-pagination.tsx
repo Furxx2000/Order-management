@@ -47,7 +47,7 @@ const DataTablePagination = <TData,>({
               <SelectValue />
             </SelectTrigger>
             <SelectContent side="top">
-              {[5, 10, 20, 50].map((size) => (
+              {[5, 10].map((size) => (
                 <SelectItem key={size} value={`${size}`}>
                   {size}
                 </SelectItem>
