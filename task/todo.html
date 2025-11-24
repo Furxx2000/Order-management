@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .completed span {
+        text-decoration: line-through;
+        color: #888;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        max-width: 420px;
+      }
+      li + li {
+        margin-top: 8px;
+      }
+      .delete-btn {
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <form>
+        <h2>我的待辦事項</h2>
+        <input id="input" type="text" placeholder="輸入待辦事項" required />
+        <button>新增</button>
+        <ul id="list"></ul>
+      </form>
+    </div>
+    <script>
+      let todos = [];
+      const input = document.getElementById("input");
+      const form = document.querySelector("form");
+      const list = document.getElementById("list");
+
+      function escapeHTML(str) {
+        return str
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function renderTodo() {
+        const html = todos
+          .map(
+            (todo, index) =>
+              `<li data-idx="${index}" class="${
+                todo.completed ? "completed" : ""
+              }">
+                <span>${escapeHTML(todo.text)}</span>
+                <button
+                  type="button"
+                  class="delete-btn"
+                  data-idx="${index}"
+                  aria-label="刪除這個待辦"
+                >刪除</button>
+              </li>`
+          )
+          .join("");
+        list.innerHTML = html;
+      }
+
+      function addTodo(event) {
+        event.preventDefault();
+        const text = input.value.trim();
+        if (text) {
+          todos.push({ text, completed: false });
+          input.value = "";
+          renderTodo();
+        } else {
+          alert("請輸入待辦事項內容");
+        }
+      }
+
+      function toggleOrDelete(event) {
+        const target = event.target;
+        if (target.classList.contains("delete-btn")) {
+          const idx = Number(target.dataset.idx);
+          todos = todos.filter((_, i) => i !== idx);
+          renderTodo();
+          return;
+        }
+        const li = target.closest("li");
+        if (!li) return;
+        const idx = Number(li.dataset.idx);
+        todos[idx].completed = !todos[idx].completed;
+        renderTodo();
+      }
+
+      form.addEventListener("submit", addTodo);
+      list.addEventListener("click", toggleOrDelete);
+    </script>
+  </body>
+</html>
