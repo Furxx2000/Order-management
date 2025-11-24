@@ -21,16 +21,6 @@ import {
 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 
-declare module "@tanstack/react-table" {
-  interface TableMeta {
-    updateOrderInState: (
-      rowIndex: number,
-      columnId: string,
-      value: string
-    ) => void;
-  }
-}
-
 const orderStatusMap: Record<string, string> = {
   pending: "bg-[#FCD34D]",
   processing: "bg-[#60A5FA]",
