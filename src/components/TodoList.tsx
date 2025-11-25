@@ -70,7 +70,7 @@ const TodoList = () => {
 
   return (
     <section className="flex flex-wrap gap-6 w-full">
-      <Card className="basis-50 grow">
+      <Card className="basis-50 grow shadow-none">
         <CardHeader>
           <CardTitle className="text-xl font-bold">My Tasks</CardTitle>
           <CardDescription>
@@ -123,7 +123,7 @@ const TodoList = () => {
         </CardFooter>
       </Card>
 
-      <Card className="basis-50 grow">
+      <Card className="basis-50 grow shadow-none">
         <CardHeader>
           <CardTitle>Your Task List</CardTitle>
           <CardDescription>

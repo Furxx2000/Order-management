@@ -27,7 +27,7 @@ const LogicRunner = () => {
   };
 
   return (
-    <Card className="w-full shadow-sm">
+    <Card className="w-full shadow-none">
       <CardHeader>
         <div className="flex items-center gap-2">
           <Calculator className="h-5 w-5 text-primary" />
@@ -82,7 +82,7 @@ const LogicRunner = () => {
             </div>
 
             <div className="bg-slate-50 rounded-lg flex-1 w-full border border-slate-200 relative min-h-[250px] md:min-h-0 overflow-hidden shadow-inner">
-              <ScrollArea className="h-[350px] w-full">
+              <ScrollArea className="h-[350px] md:h-full w-full">
                 <div className="p-4">
                   {result ? (
                     <pre className="text-xs font-mono text-slate-700 whitespace-pre-wrap break-all leading-relaxed">
