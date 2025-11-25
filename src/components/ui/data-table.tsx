@@ -192,7 +192,7 @@ const DataTable = <TData, TValue>({
       </CardHeader>
       <CardContent>
         <DataTableStats table={table} />
-        <div className="flex items-center flex-wrap py-4 gap-2">
+        <div className="flex items-center flex-wrap py-4 gap-y-4 gap-2">
           <Input
             placeholder="Filter user or user id..."
             value={globalFilter ?? ""}

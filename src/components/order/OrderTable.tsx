@@ -35,7 +35,7 @@ const OrderTable = () => {
   }
 
   return (
-    <div className="container mx-auto">
+    <div className="w-full mx-auto">
       <DataTable columns={columns} tableData={orders} />
     </div>
   );
