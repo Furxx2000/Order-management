@@ -32,41 +32,33 @@ const OrderTableSkeleton = () => {
 
           {/* 模擬 Filter Toolbar */}
           <div className="flex items-center py-4 gap-2">
-            <Skeleton className="h-8 w-[250px]" /> {/* Input */}
-            <Skeleton className="h-8 w-[90px]" /> {/* Status Filter */}
-            <Skeleton className="h-8 w-[130px]" /> {/* Delivery Filter */}
+            <Skeleton className="h-8 w-[250px]" />
+            <Skeleton className="h-8 w-[90px]" />
+            <Skeleton className="h-8 w-[130px]" />
           </div>
 
           {/* 模擬 Table 本體 */}
           <div className="rounded-md border">
             <div className="border-b px-4 py-3">
-              {/* Table Header */}
               <div className="flex gap-4">
                 {[...Array(5)].map((_, i) => (
                   <Skeleton key={i} className="h-6 w-full" />
                 ))}
               </div>
             </div>
-            {/* Table Rows */}
             <div className="p-4 space-y-4">
-              {[...Array(5)].map(
-                (
-                  _,
-                  i // 模擬 5 行資料
-                ) => (
-                  <div key={i} className="flex gap-4">
-                    <Skeleton className="h-8 w-[100px]" />
-                    <Skeleton className="h-8 w-[150px]" />
-                    <Skeleton className="h-8 w-[100px]" />
-                    <Skeleton className="h-8 w-[120px]" />
-                    <Skeleton className="h-8 w-full" />
-                  </div>
-                )
-              )}
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="flex gap-4">
+                  <Skeleton className="h-8 w-[100px]" />
+                  <Skeleton className="h-8 w-[150px]" />
+                  <Skeleton className="h-8 w-[100px]" />
+                  <Skeleton className="h-8 w-[120px]" />
+                  <Skeleton className="h-8 w-full" />
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* 模擬 Pagination */}
           <div className="flex items-center justify-end space-x-2 py-4">
             <Skeleton className="h-8 w-[250px]" />
           </div>

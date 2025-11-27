@@ -1,7 +1,7 @@
 import type { Table } from "@tanstack/react-table";
 import { Activity, DollarSign, ShoppingCart, Truck } from "lucide-react";
 
-import { Card, CardHeader, CardTitle, CardContent } from "./card";
+import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 
 interface DataTableStatsProps<TData> {
   table: Table<TData>;

@@ -9,17 +9,17 @@ import {
 import { Button } from "./button";
 import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
 
-interface DataTableColumnHeaderProps<TData, TValue>
+interface DataTableSortHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
   column: Column<TData, TValue>;
   title: string;
 }
 
-const DataTableColumnHeader = <TData, TValue>({
+const DataTableSortHeader = <TData, TValue>({
   column,
   title,
   className,
-}: DataTableColumnHeaderProps<TData, TValue>) => {
+}: DataTableSortHeaderProps<TData, TValue>) => {
   if (!column.getCanSort()) {
     return <div className={cn(className)}>{title}</div>;
   }
@@ -65,4 +65,4 @@ const DataTableColumnHeader = <TData, TValue>({
   );
 };
 
-export default DataTableColumnHeader;
+export default DataTableSortHeader;

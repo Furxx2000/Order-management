@@ -9,4 +9,11 @@ declare module "@tanstack/react-table" {
       value: string
     ) => void;
   }
+
+  interface FilterFns {
+    fuzzy: FilterFn<unknown>;
+  }
+  interface FilterMeta {
+    itemRank: RankingInfo;
+  }
 }

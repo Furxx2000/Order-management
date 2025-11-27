@@ -28,7 +28,7 @@ export const StatusBadge = ({
   return (
     <Badge
       className={cn(
-        "rounded-full px-1.5 text-xs font-medium",
+        "capitalize rounded-full px-1.5 text-xs font-medium",
         badgeClass,
         className
       )}
