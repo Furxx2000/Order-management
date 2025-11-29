@@ -9,7 +9,6 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
 } from "./command";
 import { PlusCircle } from "lucide-react";
 import { Separator } from "./separator";
@@ -168,12 +167,6 @@ const StatusList = ({
             );
           })}
         </CommandGroup>
-        {selectedValues.size > 0 && (
-          <>
-            <CommandSeparator />
-            <CommandGroup></CommandGroup>
-          </>
-        )}
       </CommandList>
     </Command>
   );

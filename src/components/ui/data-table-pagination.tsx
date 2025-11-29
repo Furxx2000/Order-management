@@ -1,4 +1,3 @@
-import type { Table } from "@tanstack/react-table";
 import {
   Select,
   SelectContent,
@@ -14,23 +13,35 @@ import {
   ChevronsRight,
 } from "lucide-react";
 
-interface DataTablePaginationProps<TData> {
-  table: Table<TData>;
+interface DataTablePaginationProps {
+  pageIndex: number;
+  pageSize: number;
+  pageCount: number;
+  totalRows?: number;
+  selectedRows?: number;
+  onPageChange: (page: number) => void;
+  onPageSizeChange: (pageSize: number) => void;
 }
 
-const DataTablePagination = <TData,>({
-  table,
-}: DataTablePaginationProps<TData>) => {
-  "use no memo";
-
-  // 為了讓程式碼更乾淨，先取出 pagination 狀態
-  const { pageSize, pageIndex } = table.getState().pagination;
-
+const DataTablePagination = ({
+  pageIndex,
+  pageSize,
+  pageCount,
+  totalRows,
+  selectedRows,
+  onPageChange,
+  onPageSizeChange,
+}: DataTablePaginationProps) => {
   return (
     <div className="flex flex-col items-center justify-between gap-4 px-2 py-4 sm:flex-row sm:gap-0 sm:py-0 w-full">
       <div className="text-muted-foreground flex-1 text-sm text-center sm:text-left">
-        {table.getFilteredSelectedRowModel().rows.length} of{" "}
-        {table.getFilteredRowModel().rows.length} row(s) selected.
+        {selectedRows !== undefined && totalRows !== undefined ? (
+          <>
+            {selectedRows} of {totalRows} row(s) selected.
+          </>
+        ) : (
+          <div className="h-4" />
+        )}
       </div>
 
       <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6 lg:gap-8">
@@ -40,14 +51,14 @@ const DataTablePagination = <TData,>({
           <Select
             value={`${pageSize}`}
             onValueChange={(value) => {
-              table.setPageSize(Number(value));
+              onPageSizeChange(Number(value));
             }}
           >
             <SelectTrigger className="max-h-8 w-[70px] focus-visible:ring-0 cursor-pointer">
               <SelectValue />
             </SelectTrigger>
             <SelectContent side="top">
-              {[5, 10].map((size) => (
+              {[5, 10, 20].map((size) => (
                 <SelectItem key={size} value={`${size}`}>
                   {size}
                 </SelectItem>
@@ -58,7 +69,7 @@ const DataTablePagination = <TData,>({
 
         {/* Page X of Y */}
         <div className="flex w-[100px] items-center justify-center text-sm font-medium">
-          Page {pageIndex + 1} of {table.getPageCount()}
+          Page {pageIndex + 1} of {pageCount}
         </div>
 
         {/* Navigation Buttons */}
@@ -67,8 +78,8 @@ const DataTablePagination = <TData,>({
             variant="outline"
             size="icon"
             className="hidden h-8 w-8 lg:flex"
-            onClick={() => table.firstPage()}
-            disabled={!table.getCanPreviousPage()}
+            onClick={() => onPageChange(0)}
+            disabled={pageIndex === 0}
           >
             <span className="sr-only">Go to first page</span>
             <ChevronsLeft className="h-4 w-4" />
@@ -77,8 +88,8 @@ const DataTablePagination = <TData,>({
             variant="outline"
             size="icon"
             className="h-8 w-8"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
+            onClick={() => onPageChange(pageIndex - 1)}
+            disabled={pageIndex === 0}
           >
             <span className="sr-only">Go to previous page</span>
             <ChevronLeft className="h-4 w-4" />
@@ -87,8 +98,8 @@ const DataTablePagination = <TData,>({
             variant="outline"
             size="icon"
             className="h-8 w-8"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
+            onClick={() => onPageChange(pageIndex + 1)}
+            disabled={pageIndex === pageCount - 1}
           >
             <span className="sr-only">Go to next page</span>
             <ChevronRight className="h-4 w-4" />
@@ -97,8 +108,8 @@ const DataTablePagination = <TData,>({
             variant="outline"
             size="icon"
             className="hidden h-8 w-8 lg:flex"
-            onClick={() => table.lastPage()}
-            disabled={!table.getCanNextPage()}
+            onClick={() => onPageChange(pageCount - 1)}
+            disabled={pageIndex === pageCount - 1}
           >
             <span className="sr-only">Go to last page</span>
             <ChevronsRight className="h-4 w-4" />

@@ -44,3 +44,29 @@ export type Order = z.infer<typeof OrderSchema>;
 
 export const OrdersResponseSchema = z.array(OrderSchema);
 export type Orders = z.infer<typeof OrdersResponseSchema>;
+
+export const PaginationMetaSchema = z.object({
+  total: z.number(),
+  page: z.number(),
+  pageSize: z.number(),
+  totalPages: z.number(),
+});
+
+export const OrderStatsSchema = z.object({
+  totalAmount: z.number(),
+  pendingCount: z.number(),
+  processingCount: z.number(),
+  shippingCount: z.number(),
+});
+
+export type OrderStats = z.infer<typeof OrderStatsSchema>;
+
+export const PaginatedOrdersResponseSchema = z.object({
+  data: z.array(OrderSchema),
+  meta: PaginationMetaSchema,
+  stats: OrderStatsSchema,
+});
+
+export type PaginatedOrdersResponse = z.infer<
+  typeof PaginatedOrdersResponseSchema
+>;

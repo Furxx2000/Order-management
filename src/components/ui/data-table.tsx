@@ -1,18 +1,4 @@
-import {
-  flexRender,
-  getCoreRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  getFilteredRowModel,
-  type FilterFn,
-  type SortingState,
-  useReactTable,
-  type ColumnDef,
-  type ColumnFiltersState,
-  type Table as TableType,
-} from "@tanstack/react-table";
-
-import { rankItem } from "@tanstack/match-sorter-utils";
+import { flexRender, type Table as TableType } from "@tanstack/react-table";
 
 import {
   Table,
@@ -22,89 +8,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useEffect, useState } from "react";
 import DataTablePagination from "./data-table-pagination";
 
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  tableData: TData[];
-  renderToolbar?: (table: TableType<TData>) => React.ReactNode;
+interface DataTableProps<TData> {
+  table: TableType<TData>;
 }
 
-const fuzzyFilter: FilterFn<unknown> = (row, columnId, value, addMeta) => {
-  const itemRank = rankItem(row.getValue(columnId), value);
-  addMeta({ itemRank });
-  return itemRank.passed;
-};
-
-const DataTable = <TData, TValue>({
-  columns,
-  tableData,
-  renderToolbar,
-}: DataTableProps<TData, TValue>) => {
-  const [data, setData] = useState(tableData);
-  const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [globalFilter, setGlobalFilter] = useState("");
-  const [rowSelection, setRowSelection] = useState({});
-
-  const updateOrderInState = (
-    rowIndex: number,
-    columnId: string,
-    value: string
-  ) => {
-    setData((prev) =>
-      prev.map((row, index) => {
-        if (index === rowIndex) {
-          return {
-            ...prev[rowIndex],
-            [columnId]: value,
-          };
-        }
-        return row;
-      })
-    );
-  };
-
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    onSortingChange: setSorting,
-    onColumnFiltersChange: setColumnFilters,
-    onGlobalFilterChange: setGlobalFilter,
-    onRowSelectionChange: setRowSelection,
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    globalFilterFn: "fuzzy",
-    autoResetPageIndex: false,
-    state: {
-      sorting,
-      columnFilters,
-      globalFilter,
-      rowSelection,
-    },
-    filterFns: {
-      fuzzy: fuzzyFilter,
-    },
-    initialState: {
-      pagination: {
-        pageSize: 5,
-      },
-    },
-    meta: {
-      updateOrderInState,
-    },
-  });
-
-  useEffect(() => {
-    table.setPageIndex(0);
-  }, [globalFilter, columnFilters, table]);
+const DataTable = <TData,>({ table }: DataTableProps<TData>) => {
+  "use no memo";
 
   return (
-    <div className="space-y-4">
-      {renderToolbar && renderToolbar(table)}
+    <div>
       <div className="overflow-hidden rounded-md border">
         <Table>
           <TableHeader>
@@ -145,7 +59,7 @@ const DataTable = <TData, TValue>({
             ) : (
               <TableRow>
                 <TableCell
-                  colSpan={columns.length}
+                  colSpan={table.getAllColumns().length}
                   className="h-24 text-center"
                 >
                   No results.
@@ -157,7 +71,15 @@ const DataTable = <TData, TValue>({
       </div>
 
       <div className="flex items-center justify-end space-x-2 py-4">
-        <DataTablePagination table={table} />
+        <DataTablePagination
+          pageIndex={table.getState().pagination.pageIndex}
+          pageSize={table.getState().pagination.pageSize}
+          pageCount={table.getPageCount()}
+          totalRows={table.getFilteredRowModel().rows.length}
+          selectedRows={table.getFilteredSelectedRowModel().rows.length}
+          onPageChange={table.setPageIndex}
+          onPageSizeChange={table.setPageSize}
+        />
       </div>
     </div>
   );

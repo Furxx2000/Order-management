@@ -1,28 +1,28 @@
-import type { Column } from "@tanstack/react-table";
-
 import ComboBoxResponsive from "./ComboBoxResponsive";
 
-interface DataTableFacetedFilterProps<TData, TValue> {
-  column?: Column<TData, TValue>;
+interface DataTableFacetedFilterProps {
   title?: string;
   options: {
     label: string;
     value: string;
     icon?: React.ReactNode;
   }[];
+  selectedValues: string[];
+  onFilterChange: (values: string[]) => void;
 }
 
-const DataTableFacetedFilter = <TData, TValue>({
-  column,
+const DataTableFacetedFilter = ({
   title,
   options,
-}: DataTableFacetedFilterProps<TData, TValue>) => {
+  selectedValues,
+  onFilterChange,
+}: DataTableFacetedFilterProps) => {
   "use no memo";
 
-  const selectedValues = new Set(column?.getFilterValue() as string[]);
+  const selectedSet = new Set(selectedValues);
 
   const handleSelect = (value: string) => {
-    const newSelectedValues = new Set(selectedValues);
+    const newSelectedValues = new Set(selectedSet);
 
     if (newSelectedValues.has(value)) {
       newSelectedValues.delete(value);
@@ -31,14 +31,14 @@ const DataTableFacetedFilter = <TData, TValue>({
     }
 
     const filterValues = Array.from(newSelectedValues);
-    column?.setFilterValue(filterValues.length > 0 ? filterValues : undefined);
+    onFilterChange(filterValues);
   };
 
   return (
     <ComboBoxResponsive
       title={title}
       statuses={options}
-      selectedValues={selectedValues}
+      selectedValues={selectedSet}
       onSelect={handleSelect}
     />
   );

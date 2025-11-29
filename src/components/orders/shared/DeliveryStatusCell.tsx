@@ -8,7 +8,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "../../ui/select";
 import { DELIVERY_STATUSES } from "@/lib/definitions";
 import type { Order } from "@/lib/definitions";
 
@@ -26,19 +26,15 @@ export const DeliveryStatusCell = ({
   const [status, setStatus] = useState(currentStatus);
 
   const handleStatusChange = async (newStatus: string) => {
-    // Optimistic update
-    setStatus(newStatus);
-
     const promise = () =>
       new Promise<Order>((resolve, reject) =>
         updateOrderDeliveryStatus(orderId, newStatus)
           .then((updatedOrder) => {
+            setStatus(updatedOrder.deliveryStatus);
             onStatusUpdate(updatedOrder.deliveryStatus);
             resolve(updatedOrder);
           })
           .catch((err) => {
-            // Revert on failure
-            setStatus(currentStatus);
             reject(err);
           })
       );

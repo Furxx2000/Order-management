@@ -1,8 +1,8 @@
-import { Checkbox } from "./ui/checkbox";
-import { Label } from "./ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import type { Todo } from "./TodoList";
 import { XIcon } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 interface TodoItemProp {
   todo: Todo;

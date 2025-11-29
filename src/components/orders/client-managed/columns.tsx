@@ -1,17 +1,17 @@
 import { type Order } from "@/lib/definitions";
 import type { ColumnDef } from "@tanstack/react-table";
-import DataTableSortHeader from "../ui/data-table-sort-header";
-import { StatusBadge } from "../ui/StatusBadge";
 import { Checkbox } from "@/components/ui/checkbox";
+import DataTableSortHeader from "@/components/ui/data-table-sort-header";
+import { StatusBadge } from "@/components/ui/StatusBadge";
 
 import {
   orderStatusMap,
   orderStatusIconMap,
   paymentStatusIconMap,
   paymentStatusIconColorMap,
-} from "./constants";
-import { AmountCell } from "./AmountCell";
-import { DeliveryStatusCell } from "./DeliveryStatusCell";
+} from "../shared/constants";
+import { AmountCell } from "../shared/AmountCell";
+import { DeliveryStatusCell } from "../shared/DeliveryStatusCell";
 
 const columns: ColumnDef<Order>[] = [
   {
@@ -38,7 +38,7 @@ const columns: ColumnDef<Order>[] = [
   },
   {
     accessorKey: "id",
-    header: "ID",
+    header: () => <div className="w-[95px]">ID</div>,
   },
   {
     accessorKey: "user",
@@ -47,7 +47,15 @@ const columns: ColumnDef<Order>[] = [
   {
     accessorKey: "amount",
     header: ({ column }) => (
-      <DataTableSortHeader column={column} title="Amount" />
+      <DataTableSortHeader
+        title="Amount"
+        sortDirection={column.getIsSorted()}
+        onSort={(direction) => {
+          if (direction === "asc") column.toggleSorting(false);
+          else if (direction === "desc") column.toggleSorting(true);
+          else column.clearSorting();
+        }}
+      />
     ),
     cell: ({ row }) => (
       <AmountCell amount={parseFloat(row.getValue("amount"))} />
@@ -55,7 +63,7 @@ const columns: ColumnDef<Order>[] = [
   },
   {
     accessorKey: "status",
-    header: "Status",
+    header: () => <div className="w-[95px]">Status</div>,
     cell: ({ row }) => {
       const status = row.getValue("status") as string;
       return (
@@ -102,7 +110,15 @@ const columns: ColumnDef<Order>[] = [
   {
     accessorKey: "date",
     header: ({ column }) => (
-      <DataTableSortHeader column={column} title="Date" />
+      <DataTableSortHeader
+        title="Date"
+        sortDirection={column.getIsSorted()}
+        onSort={(direction) => {
+          if (direction === "asc") column.toggleSorting(false);
+          else if (direction === "desc") column.toggleSorting(true);
+          else column.clearSorting();
+        }}
+      />
     ),
   },
 ];

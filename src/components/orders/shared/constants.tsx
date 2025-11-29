@@ -7,7 +7,7 @@ import {
   Undo2,
   XCircle,
 } from "lucide-react";
-import type { Status } from "../ui/ComboBoxResponsive";
+import type { Status } from "@/components/ui/ComboBoxResponsive";
 
 export const orderStatusMap: Record<string, string> = {
   pending: "bg-[#FCD34D]",
