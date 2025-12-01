@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 import { OrderContext } from "./useOrderContext";
-import { useOrderState } from "@/hooks/useOrderState";
+import { useOrderState } from "@/hooks/useOrderState/useOrderState";
 
 export const OrderProvider = ({ children }: { children: ReactNode }) => {
   const orderState = useOrderState();

@@ -1,6 +1,6 @@
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 import { Button } from "./button";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useMediaQuery } from "@/hooks/useMediaQuery/useMediaQuery";
 import { Drawer, DrawerContent, DrawerTrigger } from "./drawer";
 import {
   Command,

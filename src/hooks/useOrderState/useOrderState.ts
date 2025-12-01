@@ -1,6 +1,6 @@
 import { useReducer, useEffect } from "react";
 import { toast } from "sonner";
-import useDebounce from "@/hooks/useDebounce";
+import useDebounce from "@/hooks/useDebounce/useDebounce";
 import { fetchPaginatedOrders } from "@/services/orderService";
 import type {
   State,
