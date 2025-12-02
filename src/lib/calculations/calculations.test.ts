@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { part1Calculation, part2Calculation } from "./calculations";
-import type { Order } from "./definitions";
+import type { Order } from "../definitions";
 
 // Helper to create mock orders
 const createMockOrder = (

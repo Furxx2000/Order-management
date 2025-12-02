@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/15</span>
+                <span class='fraction'>12/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.22% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/9</span>
+                <span class='fraction'>6/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>11/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -154,31 +154,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">175x</span>
+<span class="cline-any cline-yes">479x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">175x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">479x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">175x</span>
+<span class="cline-any cline-yes">479x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,7 +186,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">875x</span>
+<span class="cline-any cline-yes">2395x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -222,21 +222,21 @@ export const DeliveryStatusCell = ({
 }: DeliveryStatusCellProps) =&gt; {
   const [status, setStatus] = useState(currentStatus);
 &nbsp;
-  const handleStatusChange = <span class="fstat-no" title="function not covered" >async (n</span>ewStatus: string) =&gt; {
-    const promise = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt;</span></span>
-<span class="cstat-no" title="statement not covered" >      new Promise&lt;Order&gt;(<span class="fstat-no" title="function not covered" >(r</span>esolve, <span class="cstat-no" title="statement not covered" >reject) =&gt;</span></span>
+  const handleStatusChange = async (newStatus: string) =&gt; {
+    const promise = () =&gt;
+      new Promise&lt;Order&gt;((resolve, reject) =&gt;
         updateOrderDeliveryStatus(orderId, newStatus)
-          .then(<span class="fstat-no" title="function not covered" >(u</span>pdatedOrder) =&gt; {
-<span class="cstat-no" title="statement not covered" >            setStatus(updatedOrder.deliveryStatus);</span>
-<span class="cstat-no" title="statement not covered" >            onStatusUpdate(updatedOrder.deliveryStatus);</span>
-<span class="cstat-no" title="statement not covered" >            resolve(updatedOrder);</span>
+          .then((updatedOrder) =&gt; {
+            setStatus(updatedOrder.deliveryStatus);
+            onStatusUpdate(updatedOrder.deliveryStatus);
+            resolve(updatedOrder);
           })
           .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >            reject(err);</span>
           })
       );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    toast.promise(promise, {</span>
+    toast.promise(promise, {
       loading: "Updating status...",
       success: <span class="fstat-no" title="function not covered" >(u</span>pdatedOrder) =&gt;
 <span class="cstat-no" title="statement not covered" >        `Order status updated to ${updatedOrder.deliveryStatus}`,</span>
@@ -268,7 +268,7 @@ export const DeliveryStatusCell = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-01T08:21:24.093Z
+                at 2025-12-02T02:00:06.370Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

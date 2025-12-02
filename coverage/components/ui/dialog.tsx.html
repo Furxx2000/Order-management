@@ -345,34 +345,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { XIcon } from "lucide-react"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { XIcon } from "lucide-react";
 &nbsp;
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/utils";
 &nbsp;
 function <span class="fstat-no" title="function not covered" >Dialog({</span>
   ...props
 }: React.ComponentProps&lt;typeof DialogPrimitive.Root&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Root data-slot="dialog" {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Root data-slot="dialog" {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogTrigger({</span>
   ...props
 }: React.ComponentProps&lt;typeof DialogPrimitive.Trigger&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogPortal({</span>
   ...props
 }: React.ComponentProps&lt;typeof DialogPrimitive.Portal&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Portal data-slot="dialog-portal" {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Portal data-slot="dialog-portal" {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogClose({</span>
   ...props
 }: React.ComponentProps&lt;typeof DialogPrimitive.Close&gt;) {
-<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Close data-slot="dialog-close" {...props} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  return &lt;DialogPrimitive.Close data-slot="dialog-close" {...props} /&gt;;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogOverlay({</span>
@@ -388,7 +388,7 @@ function <span class="fstat-no" title="function not covered" >DialogOverlay({</s
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogContent({</span>
@@ -397,7 +397,7 @@ function <span class="fstat-no" title="function not covered" >DialogContent({</s
   showCloseButton = <span class="branch-0 cbranch-no" title="branch not covered" >true,</span>
   ...props
 }: React.ComponentProps&lt;typeof DialogPrimitive.Content&gt; &amp; {
-  showCloseButton?: boolean
+  showCloseButton?: boolean;
 }) {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;DialogPortal data-slot="dialog-portal"&gt;
@@ -422,7 +422,7 @@ function <span class="fstat-no" title="function not covered" >DialogContent({</s
         )}
       &lt;/DialogPrimitive.Content&gt;
     &lt;/DialogPortal&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogHeader({</span> className, ...props }: React.ComponentProps&lt;"div"&gt;) {
@@ -432,7 +432,7 @@ function <span class="fstat-no" title="function not covered" >DialogHeader({</sp
       className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogFooter({</span> className, ...props }: React.ComponentProps&lt;"div"&gt;) {
@@ -445,7 +445,7 @@ function <span class="fstat-no" title="function not covered" >DialogFooter({</sp
       )}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogTitle({</span>
@@ -458,7 +458,7 @@ function <span class="fstat-no" title="function not covered" >DialogTitle({</spa
       className={cn("text-lg leading-none font-semibold", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >DialogDescription({</span>
@@ -471,7 +471,7 @@ function <span class="fstat-no" title="function not covered" >DialogDescription(
       className={cn("text-muted-foreground text-sm", className)}
       {...props}
     /&gt;
-  )
+  );
 }
 &nbsp;
 export {
@@ -485,7 +485,7 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-}
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -493,7 +493,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-01T08:21:24.093Z
+                at 2025-12-02T02:00:06.370Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

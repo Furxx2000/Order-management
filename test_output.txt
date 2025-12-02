@@ -1,0 +1,655 @@
+
+> frontend_task@0.0.0 test
+> vitest src/components/orders/server-managed/OrderManagementServer.test.tsx -t navigates to first page --run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.14 [39m[90m/Users/wenguangting/Desktop/interview/frontend_task[39m
+
+[90mstdout[2m | src/components/orders/server-managed/OrderManagementServer.test.tsx[2m > [22m[2mOrderManagementServer[2m > [22m[2mFilter Functionality[2m > [22m[2mnavigates to first page
+[22m[39mAvailable buttons: [
+  {
+    text: [32m'Status'[39m,
+    label: [1mnull[22m,
+    disabled: [33mfalse[39m,
+    html: [32m'<button data-slot="popover-trigger" class="inline-flex items-center justify-center whitespace-nowrap'[39m
+  },
+  {
+    text: [32m'Delivery Status'[39m,
+    label: [1mnull[22m,
+    disabled: [33mfalse[39m,
+    html: [32m'<button data-slot="popover-trigger" class="inline-flex items-center justify-center whitespace-nowrap'[39m
+  }
+]
+
+[90mstdout[2m | src/components/orders/server-managed/OrderManagementServer.test.tsx[2m > [22m[2mOrderManagementServer[2m > [22m[2mFilter Functionality
+[22m[39mRequest aborted (stale)
+
+ [31m❯[39m src/components/orders/server-managed/OrderManagementServer.test.tsx [2m([22m[2m36 tests[22m[2m | [22m[31m1 failed[39m[2m | [22m[33m35 skipped[39m[2m)[22m[33m 981[2mms[22m[39m
+       [2m[90m↓[39m[22m renders loading skeleton initially
+       [2m[90m↓[39m[22m renders orders after successful fetch
+       [2m[90m↓[39m[22m renders stats cards with correct data
+       [2m[90m↓[39m[22m displays correct table headers
+       [2m[90m↓[39m[22m updates search input value when typing
+       [2m[90m↓[39m[22m filters orders based on search query
+       [2m[90m↓[39m[22m shows no results message when search has no matches
+       [2m[90m↓[39m[22m displays status filter button
+       [2m[90m↓[39m[22m displays delivery status filter button
+       [2m[90m↓[39m[22m shows reset button when filters are applied
+       [2m[90m↓[39m[22m clears all filters when reset button is clicked
+       [2m[90m↓[39m[22m applies status filter when option is selected
+       [2m[90m↓[39m[22m navigates to next page
+       [2m[90m↓[39m[22m navigates to previous page
+       [2m[90m↓[39m[22m navigates to last page
+[31m       [31m×[31m navigates to first page[39m[33m 979[2mms[22m[39m
+       [2m[90m↓[39m[22m changes rows per page
+       [2m[90m↓[39m[22m applies multiple status filters
+       [2m[90m↓[39m[22m removes filter when option is deselected
+       [2m[90m↓[39m[22m applies delivery status filter
+       [2m[90m↓[39m[22m combines multiple filter types
+       [2m[90m↓[39m[22m displays sort headers for Amount and Date
+       [2m[90m↓[39m[22m sorts by amount when clicking amount header
+       [2m[90m↓[39m[22m sorts by date when clicking date header
+       [2m[90m↓[39m[22m displays pagination controls
+       [2m[90m↓[39m[22m displays rows per page selector
+       [2m[90m↓[39m[22m shows selected row count in pagination
+       [2m[90m↓[39m[22m selects individual row when checkbox is clicked
+       [2m[90m↓[39m[22m selects all visible rows when select all checkbox is clicked
+       [2m[90m↓[39m[22m deselects all rows when select all is clicked again
+       [2m[90m↓[39m[22m shows indeterminate state when some rows are selected
+       [2m[90m↓[39m[22m displays delivery status dropdown for each order
+       [2m[90m↓[39m[22m updates delivery status when option is selected
+       [2m[90m↓[39m[22m combines search and pagination correctly
+       [2m[90m↓[39m[22m maintains row selection when changing pages
+       [2m[90m↓[39m[22m updates stats when filters are applied
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/components/orders/server-managed/OrderManagementServer.test.tsx[2m > [22mOrderManagementServer[2m > [22mFilter Functionality[2m > [22mnavigates to first page
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the role "button" and name `/go to first page/i`
+
+Here are the available roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "":
+  [36m<input[39m
+    [33mclass[39m=[32m"file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive max-w-2xs h-8"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mplaceholder[39m=[32m"Filter user or user id..."[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Status":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"radix-_r_0_"[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 h-8 border-dashed"[39m
+    [33mdata-slot[39m=[32m"popover-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Delivery Status":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"radix-_r_1_"[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33mclass[39m=[32m"inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 h-8 border-dashed"[39m
+    [33mdata-slot[39m=[32m"popover-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  table:
+
+  Name "":
+  [36m<table[39m
+    [33mclass[39m=[32m"w-full caption-bottom text-sm"[39m
+    [33mdata-slot[39m=[32m"table"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  rowgroup:
+
+  Name "":
+  [36m<thead[39m
+    [33mclass[39m=[32m"[&_tr]:border-b"[39m
+    [33mdata-slot[39m=[32m"table-header"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tbody[39m
+    [33mclass[39m=[32m"[&_tr:last-child]:border-0"[39m
+    [33mdata-slot[39m=[32m"table-body"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  row:
+
+  Name "":
+  [36m<tr[39m
+    [33mclass[39m=[32m"hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tr[39m
+    [33mclass[39m=[32m"hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tr[39m
+    [33mclass[39m=[32m"hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tr[39m
+    [33mclass[39m=[32m"hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tr[39m
+    [33mclass[39m=[32m"hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tr[39m
+    [33mclass[39m=[32m"hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  columnheader:
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<th[39m
+    [33mclass[39m=[32m"text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  cell:
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-8 shadow-none"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-2xl font-bold"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [0mWelcome back![0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-muted-foreground text-sm"[39m
+          [33mdata-slot[39m=[32m"card-description"[39m
+        [36m>[39m
+          [0mHere's a list of the orders every month.[0m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"px-6"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm"[39m
+            [33mdata-slot[39m=[32m"card"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"@container/card-header auto-rows-min grid-rows-[auto_auto] gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between space-y-0 pb-2"[39m
+              [33mdata-slot[39m=[32m"card-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-sm font-medium"[39m
+                [33mdata-slot[39m=[32m"card-title"[39m
+              [36m>[39m
+                [0mTotal Revenue[0m
+              [36m</div>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-dollar-sign h-4 w-4 text-muted-foreground"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<line[39m
+                  [33mx1[39m=[32m"12"[39m
+                  [33mx2[39m=[32m"12"[39m
+                  [33my1[39m=[32m"2"[39m
+                  [33my2[39m=[32m"22"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-6"[39m
+              [33mdata-slot[39m=[32m"card-content"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-2xl font-bold"[39m
+              [36m>[39m
+                [0mNT$ [0m
+                [0m27,230[0m
+              [36m</div>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+              [36m>[39m
+                [0mFrom [0m
+                [0m13[0m
+                [0m orders[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm"[39m
+            [33mdata-slot[39m=[32m"card"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"@container/card-header auto-rows-min grid-rows-[auto_auto] gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between space-y-0 pb-2"[39m
+              [33mdata-slot[39m=[32m"card-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-sm font-medium"[39m
+                [33mdata-slot[39m=[32m"card-title"[39m
+              [36m>[39m
+                [0mPending Orders[0m
+              [36m</div>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-activity h-4 w-4 text-yellow-500"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-6"[39m
+              [33mdata-slot[39m=[32m"card-content"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-2xl font-bold"[39m
+              [36m>[39m
+                [0m5[0m
+              [36m</div>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-xs text-muted-foreground"[39m
+              [36m>[39m
+                [0mRequires attention[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm"[39m
+            [33mdata-slot[39m=[32m"card"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"@container/card-header auto-rows-min grid-rows-[auto_auto] gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between space-y-0 pb-2"[39m
+              [33mdata-slot[39m=[32m"card-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-sm font-medium"[39m
+                [33mdata-slot[39m=[32m"card-title"[39...
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/components/orders/server-managed/OrderManagementServer.test.tsx:[2m431:38[22m[39m
+    [90m429| [39m
+    [90m430| [39m      [90m// Go to first page[39m
+    [90m431| [39m      [35mconst[39m firstPageButton [33m=[39m screen[33m.[39m[34mgetByRole[39m([32m"button"[39m[33m,[39m {
+    [90m   | [39m                                     [31m^[39m
+    [90m432| [39m        name[33m:[39m [36m/go to first page/i[39m[33m,[39m
+    [90m433| [39m        hidden[33m:[39m [35mtrue[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[33m35 skipped[39m[90m (36)[39m
+[2m   Start at [22m 23:47:49
+[2m   Duration [22m 2.06s[2m (transform 193ms, setup 229ms, import 390ms, tests 981ms, environment 381ms)[22m
+

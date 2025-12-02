@@ -2,7 +2,7 @@ import { delay, http, HttpResponse } from "msw";
 import { MOCK_ORDERS } from "@/data/orders";
 import * as z from "zod";
 import { DeliveryStatusSchema } from "@/lib/definitions";
-import { fuzzyMatch } from "@/lib/utils";
+import { fuzzyMatch } from "@/lib/utils/utils";
 
 const newDeliveryStatusSchema = z.object({
   deliveryStatus: DeliveryStatusSchema,

@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 import type { LucideIcon } from "lucide-react";
 
 type Status = string;

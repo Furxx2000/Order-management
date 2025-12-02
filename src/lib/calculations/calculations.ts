@@ -1,4 +1,4 @@
-import type { Order, DeliveryStatus } from "./definitions";
+import type { Order, DeliveryStatus } from "../definitions";
 
 // Part 1
 export function part1Calculation(orders: Order[]) {

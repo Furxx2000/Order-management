@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { MOCK_ORDERS } from "@/data/orders";
-import { part1Calculation, part2Calculation } from "@/lib/calculations";
+import {
+  part1Calculation,
+  part2Calculation,
+} from "@/lib/calculations/calculations";
 import {
   Card,
   CardContent,
